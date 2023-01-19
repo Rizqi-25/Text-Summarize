@@ -35,7 +35,6 @@ class summarize:
                 filtered_words.append(w)
         total_words = len(filtered_words)
 
-        
         # MEMBUAT COUNT DOCUMENT PER WORDS
         # Menentukan frekuensi setiap kata yang disaring dan
         # menambahkan kata dan frekuensinya ke dictionary
@@ -73,13 +72,13 @@ class summarize:
             # Hapus kalimat yang sudah diambil sebelumnya dari tracker, agar kalimat yang diambil selanjutnya memiliki pembobotan freq tertinggi
             tfidf.remove(tfidf[index])
 
-        sorted_output_sent = self.sort_sentences(sentences_original, output_sentence)
-        return (sorted_output_sent)
+        summary = self.generate_summary(sentences_original, output_sentence)
+        return (summary)
 
     # @def sort_senteces:
     # Dari output kalimat, urutkan kalimat-kalimat tersebut sehingga mereka muncul dalam urutan teks masukan yang diberikan.
 
-    def sort_sentences(self, original, output):
+    def generate_summary(self, original, output):
         sorted_sent_arr = []
         sorted_output = []
         for i in range(0, len(output)):
@@ -101,8 +100,6 @@ def original_text_form():
     title = "Summarizer"
     text = request.form['input_text']  # Text dari form input html
     max_value = sent_tokenize(text)
-    # Jumlah kalimat yang diminta untuk dibuatkan rangkuman
-    # num_sent = int(request.form['num_sentences'])
     sum1 = summarize()
     summary = sum1.get_summary(text, max_value)
     print(summary)
@@ -114,10 +111,11 @@ def homepage():
     title = "Text Summarizer"
     return render_template("index.html", title=title)
 
-# @app.route('/templates', methods=['POST'])
-# def get_started():
-#     title = "Get Started"
-#     return render_template("get_started.html", title=title)
+
+@app.route('/', methods=['POST'])
+def get_started():
+    title = "Get Started"
+    return render_template("get_started.html", title=title)
 
 
 @app.route('/templates')
