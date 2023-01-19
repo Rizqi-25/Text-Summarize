@@ -62,34 +62,6 @@
         color: rgb(228, 151, 42);
     }
 
-    /* h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 700;
-    }
-
-    p {
-        font-size: 50px;
-    }
-
-    ul {
-        display: block;
-    }
-
-    .container {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footer {
-        padding: 12px 0 12px 0;
-    } */
-
     .gray-bg {
         background-color: #f6f6f6;
     }
@@ -171,7 +143,7 @@
         </div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <h2>Text Summerizer</h2>
+                <h2 style="margin-bottom: 15px;">Text Summerizer</h2>
                 <form action="/templates" id="sumform" method="POST">
                     <!-- <label for="exampleFormControlTextarea1">
                         You can summerize any text from article, journal, story and more by simply copying and pasting
@@ -183,13 +155,9 @@
                         placeholder="Input your text here"></textarea>></textarea>
 
                     <br>
-                    <!-- <p>Jumlah kalimat yang ingin ditampilkan dirangkuman: </p> -->
-                    <!-- <p>
-                        <input value="1" type="number" name="num_sentences" pattern="[0-9]+" min="1" max="100" required
-                            hidden>
-                    </p> -->
-                    <br>
-                    <button type="submit" id="form-submit" class="btn btn-success">Generate Now</button>
+                    <button style="margin: 20px 0 20px 0;" type="submit" id="form-submit"
+                        class="btn btn-success">Generate
+                        Now</button>
                     <br>
                     <h4 id="output">Summazrized Text: </h4>
                     <textbox name="output_text" id="output_text" maxlength="50000" style="width:600px; height:250px">
@@ -202,31 +170,7 @@
                     <h4>Original Text:</h4>
                     <p>{{ original_text }}</p>
                 </form>
-                <!-- <form action="/templates" id="sumform" method="POST">
-                    <label for="exampleFormControlTextarea1">
-                        You can summerize any text from article, journal, story and more by simply copying and pasting
-                        that text below. The Algortim for the summerizer will display the output summary based on
-                        keyword extracted from the text
-                    </label>
-                    <textarea class="form-control" name="input_text" id="input_text" rows="10"
-                        placeholder="Input your text here"></textarea>
-                    <br>
-                    <p>Jumlah kalimat yang ingin ditampilkan dirangkuman: </p>
-                    <p>
-                        <input type="number" name="num_sentences" pattern="[0-9]+" min="1" max="100" required>
-                    </p>
-                    <p>
-                        <button type="submit" id="form-submit" class="btn btn-success">Generate Now</button>
-                        <br>
-                        <label for="exampleFormControlTextarea1">
-                            <b>summerized Text :</b>
-                        </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10">
-                            {% for sentence in output_summary %}
-                            <p>{{ sentence }} </p>
-                            {% endfor %}
-                        </textarea>
-                </form> -->
+
             </div>
         </div>
 
@@ -283,19 +227,13 @@
             <div class="footer-col2">
                 <ul class="weblinks-inline marg_bot">
                     <li>
-                        <a href="https://plus.google.com/" class="social transition" targer="_blank">
-                            <i class="fa fa-google-plus-square" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.github.com/paravp/" class="social transition" targer="_blank">
+                        <a href="https://www.github.com/Rizqi-25/" class="social transition" targer="_blank">
                             <i class="fa fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/parav-patel-2722008a/" class="social transition"
-                            targer="_blank">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        <a href="https://www.github.com/fdlrhmnwafii/" class="social transition" targer="_blank">
+                            <i class="fa fa-github" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
@@ -303,7 +241,7 @@
             <p class="copyright">
                 <a href="">© Text Summarizer 2023 Information Retrieval</a> <br>
                 All Rights Reserved, Developed by Padel & Rizqi 3DE01 STT NF
-                <a targer="_blank" href="http://github.com/paravp/">paravp</a>
+                <a targer="_blank" href="http://github.com/Rizqi-25/">Rizqi&Padel</a>
             </p>
         </div>
 
