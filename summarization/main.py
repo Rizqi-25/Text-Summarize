@@ -13,10 +13,6 @@ class summarize:
         max_sentences = len(sentences_original)
 
         # Hapus semua tab spacing, dan baris baru
-        # if (max_sentences > len(sentences_original)):
-        #     print(
-        #         "Error, jumlah kalimat yang diminta melebihi jumlah kalimat yang dimasukkan")
-
         # menghapus white space di depan dan di belakang kalimat
         s = input.strip('\t\n')
 
@@ -62,14 +58,14 @@ class summarize:
         # Ambil kalimat yang memiliki pembobotan paling besar dan hasil indexingnya, lalu tambahkan kalimat tersebut ke output kalimat.
         for i in range(0, len(tfidf)):
 
-            # Extract index dengan nilai pembobotan freq tertinggi dari tracker
+            # Extract index dengan nilai pembobotan freq tertinggi dari hasil indexing sentence
             index, value = max(enumerate(tfidf), key=operator.itemgetter(1))
             if (len(output_sentence)+1 <= max_sentences) and (sentences_original[index] not in output_sentence):
                 output_sentence.append(sentences_original[index])
             if len(output_sentence) > max_sentences:
                 break
 
-            # Hapus kalimat yang sudah diambil sebelumnya dari tracker, agar kalimat yang diambil selanjutnya memiliki pembobotan freq tertinggi
+            # Hapus kalimat yang sudah diambil sebelumnya dari indexing sentence, agar kalimat yang diambil selanjutnya memiliki pembobotan freq tertinggi
             tfidf.remove(tfidf[index])
 
         summary = self.generate_summary(sentences_original, output_sentence)
