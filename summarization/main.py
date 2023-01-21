@@ -43,12 +43,10 @@ class summarize:
             else:
                 word_frequency[w] = 1.0  # add the word to dictionary
 
-        # Pembobotan kata
         for word in word_frequency:
             word_frequency[word] = (word_frequency[word]/total_words)
 
-        # menyimpan kata-kata yang paling sering muncul di setiap kalimat dan tambahkan jumlah nilai frekuensi setelah dilakukan pembobotan.
-        # indexing sentences
+        # TF-IDF atau pembobotan kalimat
         tfidf = [0.0] * len(sentences_original)
         for i in range(0, len(sentences_original)):
             for j in word_frequency:
@@ -57,7 +55,6 @@ class summarize:
 
         # Ambil kalimat yang memiliki pembobotan paling besar dan hasil indexingnya, lalu tambahkan kalimat tersebut ke output kalimat.
         for i in range(0, len(tfidf)):
-
             # Extract index dengan nilai pembobotan freq tertinggi dari hasil indexing sentence
             index, value = max(enumerate(tfidf), key=operator.itemgetter(1))
             if (len(output_sentence)+1 <= max_sentences) and (sentences_original[index] not in output_sentence):
